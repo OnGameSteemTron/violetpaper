@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ongame</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../assets/fonts/css/font-awesome.min.css" />
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../assets/plugins/animate.css-master/animate.min.css">
+    <!-- Light Box -->
+    <link href="../assets/plugins/lightbox2-master/dist/css/lightbox.css" rel="stylesheet">
+    <!-- Video js -->
+    <link href="../assets/css/video-js.css" rel="stylesheet">
+    <link href="../assets/css/vis.min.css" rel="stylesheet">
+    <!-- Sliders -->
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slick-1.8.0/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slick-1.8.0/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slider/css/normalize.min.css" media="screen, print" />
+    <link rel="stylesheet" type="text/css" href="../assets/plugins/slider/css/smartslider.min.css" media="screen, print" />
+    <style type="text/css">
+        .n2-ss-spinner-simple-white-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px;
+            background: #fff;
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .n2-ss-spinner-simple-white {
+            outline: 1px solid RGBA(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .n2-ss-spinner-simple-white:before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -11px;
+            margin-left: -11px;
+        }
+
+        .n2-ss-spinner-simple-white:not(:required):before {
+            content: '';
+            border-radius: 50%;
+            border-top: 2px solid #333;
+            border-right: 2px solid transparent;
+            animation: n2SimpleWhite .6s linear infinite;
+            -webkit-animation: n2SimpleWhite .6s linear infinite;
+        }
+
+        @keyframes n2SimpleWhite {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes n2SimpleWhite {
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.N2PRO = 1;
+        window.N2GSAP = 1;
+        window.N2PLATFORM = "wordpress";
+        (function () {
+            var N = this;
+            N.N2_ = N.N2_ || {
+                r: [],
+                d: []
+            }, N.N2R = N.N2R || function () {
+                N.N2_.r.push(arguments)
+            }, N.N2D = N.N2D || function () {
+                N.N2_.d.push(arguments)
+            }
+        }).call(window);
+        if (!window.n2jQuery) {
+            window.n2jQuery = {
+                ready: function (cb) {
+                    console.error('n2jQuery will be deprecated!');
+                    N2R(['$'], cb);
+                }
+            }
+        }
+        window.nextend = {
+            localization: {},
+            ready: function (cb) {
+                console.error('nextend.ready will be deprecated!');
+                N2R('documentReady', function ($) {
+                    cb.call(window, $)
+                })
+            }
+        };
+        window.N2SSPRO = 1;
+        window.N2SS3C = "smartslider3";
+        nextend.fontsLoaded = false;
+        nextend.fontsLoadedActive = function () {
+            nextend.fontsLoaded = true;
+        };
+        var fontData = {
+            google: {
+                families: ["Poppins:300,400:latin"]
+            },
+            active: function () {
+                nextend.fontsLoadedActive()
+            },
+            inactive: function () {
+                nextend.fontsLoadedActive()
+            }
+        };
+        if (typeof WebFontConfig !== 'undefined') {
+            var _WebFontConfig = WebFontConfig;
+            for (var k in WebFontConfig) {
+                if (k == 'active') {
+                    fontData.active = function () {
+                        nextend.fontsLoadedActive();
+                        _WebFontConfig.active();
+                    }
+                } else if (k == 'inactive') {
+                    fontData.inactive = function () {
+                        nextend.fontsLoadedActive();
+                        _WebFontConfig.inactive();
+                    }
+                } else if (k == 'google') {
+                    if (typeof WebFontConfig.google.families !== 'undefined') {
+                        for (var i = 0; i < WebFontConfig.google.families.length; i++) {
+                            fontData.google.families.push(WebFontConfig.google.families[i]);
+                        }
+                    }
+                } else {
+                    fontData[k] = WebFontConfig[k];
+                }
+            }
+        }
+        if (typeof WebFont === 'undefined') {
+            window.WebFontConfig = fontData;
+        } else {
+            WebFont.load(fontData);
+        }
+    </script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/n2-j.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-gsap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/smartslider-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/smartslider-simple-type-frontend.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/slider/js/nextend-webfontloader.min.js"></script>
+    <script type="text/javascript">
+        N2R('documentReady', function ($) {
+
+            nextend.fontsDeferred = $.Deferred();
+            if (nextend.fontsLoaded) {
+                nextend.fontsDeferred.resolve();
+            } else {
+                nextend.fontsLoadedActive = function () {
+                    nextend.fontsLoaded = true;
+                    nextend.fontsDeferred.resolve();
+                };
+                var intercalCounter = 0;
+                nextend.fontInterval = setInterval(function () {
+                    if (intercalCounter > 3 || document.documentElement.className.indexOf('wf-active') !==
+                        -1) {
+                        nextend.fontsLoadedActive();
+                        clearInterval(nextend.fontInterval);
+                    }
+                    intercalCounter++;
+                }, 1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- PRELOADER START -->
+    <div class="loader-wrapper">
+        <div class='cssload-loader'>
+
+            <div class='cssload-inner cssload-one'></div>
+            <div class='cssload-inner cssload-two'></div>
+            <div class='cssload-inner cssload-three'></div>
+            <img src="../assets/images/logomedium.png">
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+    <!-- HEADER START -->
+    <div class="header-line-wrapper">
+        <header class="header-wrapper fixed-top plr100">
+            <div class="table height-100p">
+                <div class="table-row">
+                    <div class="table-cell valign-middle text-left">
+                        <a href="index.html" class="logo">
+                            <img src="../assets/images/logomedium.png" alt="" class="img-responsive inline-block">
+                        </a>
+                    </div>
+                    <div class="table-cell valign-top text-center vm-sm">
+                        <div class="main-menu">
+                            <span class="toggle_menu">
+                                <span></span>
+                            </span>
+                            <ul class="menu clearfix">
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-introduction">
+                                        INTRODUCTION
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-gaming">
+                                        GAMING
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-problem">
+                                        PROBLEM
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-solution">
+                                        SOLUTION
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-blockchain">
+                                        BLOCKCHAIN
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-roadmap">
+                                        ROADMAP
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-team">
+                                        TEAM
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-faq">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li class="inline-block">
+                                    <a class="ongame-menu" href="#section-contact">
+                                        CONTACT
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-cell valign-top text-right">
+                        <div class="right-bl">
+                            <div class="search-wrapper inline-block valign-middle">
+                                <a href="https://discord.me/ongame" target="_blank" class="btn header-btn ml25 color-white hidden-sm hidden-xs">
+                                    Join us Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- HEADER END -->
+
+
+    <!-- SLIDER START -->
+    <section class="main-slider">
+        <style type="text/css">
+            div#n2-ss-4 {
+                width: 1200px;
+                float: left;
+                margin: 0px 0px 0px 0px;
+            }
+
+            html[dir="rtl"] div#n2-ss-4 {
+                float: right;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-1 {
+                position: relative;
+                padding-top: 0px;
+                padding-right: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                height: 500px;
+                border-style: solid;
+                border-width: 0px;
+                border-color: #3e3e3e;
+                border-color: RGBA(62, 62, 62, 1);
+                border-radius: 0px;
+                background-clip: padding-box;
+                background-repeat: repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                background-attachment: scroll;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-background-video-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-2 {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .x-firefox div#n2-ss-4 .n2-ss-slider-2 {
+                opacity: 0.99999;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-3 {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                outline: 1px solid rgba(0, 0, 0, 0);
+                z-index: 10;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds,
+            div#n2-ss-4 .n2-ss-slider-3>.n-particles-js-canvas-el,
+            div#n2-ss-4 .n2-ss-slider-3>.n2-ss-divider {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds {
+                z-index: 10;
+            }
+
+            div#n2-ss-4 .n2-ss-slider-3>.n-particles-js-canvas-el {
+                z-index: 12;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-backgrounds>* {
+                overflow: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+                display: block;
+                -webkit-backface-visibility: hidden;
+            }
+
+            div#n2-ss-4 .n2-ss-layers-container {
+                position: relative;
+                width: 1200px;
+                height: 500px;
+            }
+
+            div#n2-ss-4 .n2-ss-parallax-clip>.n2-ss-layers-container {
+                position: absolute;
+                right: 0;
+            }
+
+            div#n2-ss-4 .n2-ss-slide {
+                -webkit-perspective: 1000px;
+                perspective: 1000px;
+            }
+
+            div#n2-ss-4 .n2-ss-slide-active {
+                z-index: 21;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container,
+            div#n2-ss-4 .n2-ss-button-container a {
+                display: inline-block;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-fullwidth,
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-fullwidth a {
+                display: block;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container.n2-ss-nowrap {
+                white-space: nowrap;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a div {
+                display: inline;
+                font-size: inherit;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a>div {
+                display: inline-flex;
+                align-items: center;
+                vertical-align: top;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container i {
+                font-size: 100%;
+                vertical-align: baseline;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a[data-iconplacement="left"] i {
+                margin-right: 0.3em;
+            }
+
+            div#n2-ss-4 .n2-ss-button-container a[data-iconplacement="right"] i {
+                margin-left: 0.3em;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet {
+                visibility: hidden;
+                text-align: center;
+                justify-content: center;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize {
+                width: 100%;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize {
+                height: 100%;
+                flex-flow: column;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar {
+                display: inline-flex;
+                visibility: visible;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-left {
+                justify-content: flex-start;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-center {
+                justify-content: center;
+            }
+
+            div#n2-ss-4 .n2-bar-justify-content-right {
+                justify-content: flex-end;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical>.nextend-bullet-bar {
+                flex-flow: column;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                display: flex;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-horizontal.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                flex: 1 1 auto;
+            }
+
+            div#n2-ss-4 .n2-ss-control-bullet-vertical.n2-ss-control-bullet-fullsize>.nextend-bullet-bar {
+                height: 100%;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar>div {
+                display: inline-block;
+                cursor: pointer;
+                transition: background-color 0.4s;
+                vertical-align: top;
+            }
+
+            div#n2-ss-4 .nextend-bullet-bar>div.n2-active {
+                cursor: default;
+            }
+
+            div#n2-ss-4 div.n2-ss-bullet-thumbnail-container {
+                position: absolute;
+                opacity: 0;
+                z-index: 10000000;
+            }
+
+            div#n2-ss-4 .n2-ss-bullet-thumbnail-container .n2-ss-bullet-thumbnail {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Poppins', 'Arial';
+                color: #f000ff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #f000ff;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.7);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.829);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Poppins', 'Arial';
+                color: #f000ff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #f000ff;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-be0a516f76efd05e36733289aaf2a6de-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 300%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 600%;
+                text-shadow: none;
+                line-height: 1;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+                font-family: "Agency FB";
+            }
+
+            div#n2-ss-4 .n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph {
+                font-family: 'Poppins', 'Arial';
+                color: #ffffff;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+                text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.8);
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:FOCUS {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:HOVER,
+            div#n2-ss-4 .n2-ss-layer .n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph a:ACTIVE {
+                font-family: 'Poppins', 'Arial';
+                color: #1890d7;
+                font-size: 100%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: none;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a {
+                font-family: 'Poppins', 'Arial';
+                color: #f000ff;
+                font-size: 87.5%;
+                text-shadow: none;
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                border-radius: 10px;
+                box-shadow: 0 2px 4.8px 0.3px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:HOVER,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:ACTIVE,
+            div#n2-ss-4 .n2-font-06be61400c1a4b339e67534a8a262348-link a:FOCUS {
+                color: #ffffff;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading {
+                background: #ffffff;
+                opacity: 1;
+                padding: 19px 50px 19px 50px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:Hover,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:ACTIVE,
+            div#n2-ss-4 .n2-style-588404275f372121297e39cfe0b03e24-heading:FOCUS {
+                background: #f000ff;
+            }
+
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot {
+                background: #000000;
+                background: RGBA(0, 0, 0, 0);
+                opacity: 1;
+                padding: 20px 9px 20px 9px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #000000;
+                border-color: RGBA(0, 0, 0, 1);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot.n2-active,
+            div#n2-ss-4 .n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot:HOVER {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                padding: 20px 9px 20px 9px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-style-3e702635329eba6b6b98a2cfe62c4664-simple {
+                background: #ffffff;
+                background: RGBA(255, 255, 255, 0);
+                opacity: 1;
+                padding: 0px 0px 0px 0px;
+                box-shadow: none;
+                border-width: 0px;
+                border-style: solid;
+                border-color: #ffffff;
+                border-color: RGBA(255, 255, 255, 0);
+                border-radius: 0px;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:FOCUS {
+                font-family: 'Agency FB';
+                color: #ffffff;
+                font-size: 150%;
+                text-shadow: none;
+                line-height: 1.2;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                text-align: center;
+                letter-spacing: normal;
+                word-spacing: normal;
+                text-transform: uppercase;
+                font-weight: 700;
+                opacity: 0.8;
+                -webkit-writing-mode: vertical-rl;
+                writing-mode: vertical-rl;
+                transition: all 0.3s ease-out;
+            }
+
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot.n2-active,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:HOVER,
+            div#n2-ss-4 .n2-font-7b5c9760d048f32382e5cebedacdf830-dot:ACTIVE {
+                color: #ffffff;
+                font-size: 150%;
+                opacity: 1;
+                transition: all 0.3s ease-out;
+            }
+        </style>
+        <div id="n2-ss-4-align" class="n2-ss-align">
+            <div class="n2-padding">
+                <div id="n2-ss-4" data-creator="Smart Slider 3" class="n2-ss-slider n2-ow n2-has-hover n2notransition n2-ss-load-fade "
+                    data-minFontSizedesktopPortrait="1" data-minFontSizedesktopLandscape="1"
+                    data-minFontSizetabletPortrait="1" data-minFontSizetabletLandscape="1"
+                    data-minFontSizemobilePortrait="1" data-minFontSizemobileLandscape="1" style="font-size: 16px;"
+                    data-fontsize="16">
+                    <div class="n2-ss-slider-1 n2-ss-swipe-element n2-ow" style="">
+                        <div class="n2-ss-slider-2 n2-ow">
+                            <div class="n2-ss-slider-3 n2-ow" style="">
+
+                                <div class="n2-ss-slide-backgrounds"></div>
+                                <div data-first="1" data-slide-duration="0" data-id="15" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-15">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="7f12344252192edee35072e997e65114" data-desktop="../assets/plugins/slider/images/slide-1.jpg"
+                                            data-blur="0" data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-1.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit"
+                                            data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                            data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+"
+                                            data-desktopportraitinneralign="inherit" data-sstype="content"
+                                            data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1"
+                                            data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1"
+                                            data-desktopportraitfontsize="100" data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;"
+                                                data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item1" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow"
+                                                        style="display:block;">A New Era Of Gaming Starts Now!</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item2" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;">OnGame.io</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1"
+                                                    data-desktopportraitmaxwidth="955" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">OnGame
+                                                            is the first of its kind blockchain app
+                                                            that leverages cryptocurrency in a platform agnostic
+                                                            approach to reward its users, incentivize engagement and
+                                                            support the gaming community with the native OG currency.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+                                                        <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow "
+                                                            href="https://ongame.io" target="_blank">
+                                                            <div>
+                                                                <div>VISIT NOW</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slide-duration="0" data-id="16" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-16">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="df538617dc01fb19a0bb4e642cc11f2d" data-desktop="../assets/plugins/slider/images/slide-2.jpg"
+                                            data-blur="0" data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-2.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit"
+                                            data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                            data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+"
+                                            data-desktopportraitinneralign="inherit" data-sstype="content"
+                                            data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1"
+                                            data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1"
+                                            data-desktopportraitfontsize="100" data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;"
+                                                data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item5" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow"
+                                                        style="display:block;">A selection of the best content</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item6" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;">Just for you</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1"
+                                                    data-desktopportraitmaxwidth="955" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">OnGame
+                                                            taps into the power of the STEEM and TRON blockchains to
+                                                            incentivize
+                                                            engagement and offers an alternative, complementary way to
+                                                            monetize gaming
+                                                            content. It has no predefined algorithms and it is a free
+                                                            to use gaming platform allowing
+                                                            creators of varying skills to have their own community on
+                                                            OnGame, share their livestreams,
+                                                            tips and tricks, and get rewarded for it.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+                                                        <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow "
+                                                            onclick="return false;" href="#">
+                                                            <div>
+                                                                <div>Buy OG Tokens</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-slide-duration="0" data-id="17" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-17">
+                                    <div class="n2-ss-slide-background n2-ow" data-mode="fill">
+                                        <img data-hash="daeb09696afe190d4a842f033c14d69b" data-desktop="../assets/plugins/slider/images/slide-3.jpg"
+                                            data-blur="0" data-opacity="100" data-x="50" data-y="50" src="../assets/plugins/slider/images/slide-3.jpg"
+                                            alt="" />
+                                    </div>
+                                    <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit"
+                                            data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                            data-desktopportraitselfalign="inherit" data-pm="content"
+                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+"
+                                            data-desktopportraitinneralign="inherit" data-sstype="content"
+                                            data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
+                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1"
+                                            data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1"
+                                            data-desktopportraitfontsize="100" data-plugin="rendered">
+                                            <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;"
+                                                data-verticalalign="center">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item9" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow"
+                                                        style="display:block;">You are on the</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item10" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
+                                                        style="display:block;">HIGHWAY OF GAMING</div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="1"
+                                                    data-desktopportraitmaxwidth="955" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                    <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
+                                                        <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">We
+                                                            trust that OnGame will make a big disruption in the gaming
+                                                            world and particularly in the way of how gamers and
+                                                            companies are interacting with each others.
+                                                            <br /> OnGame also offer their gamers a chance to be
+                                                            rewarded by gaming compagnies for accomplishing Success.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;"
+                                                    data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
+                                                    data-desktopportraitheight="0" data-has-maxwidth="0"
+                                                    data-desktopportraitmaxwidth="0" data-cssselfalign="inherit"
+                                                    data-desktopportraitselfalign="inherit" data-sstype="layer"
+                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
+                                                    data-desktopportrait="1" data-desktoplandscape="1"
+                                                    data-tabletportrait="1" data-tabletlandscape="1"
+                                                    data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0"
+                                                    data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
+                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                    <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
+                                                        <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow "
+                                                            onclick="return false;" href="#">
+                                                            <div>
+                                                                <div>Upcoming games</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-ssleft="0+100" data-sstop="height/2-bulletheight/2" data-offset="100" class="n2-ss-widget n2-ss-widget-display-desktop n2-ss-widget-display-tablet n2-ss-widget-display-mobile  n2-flex n2-ss-control-bullet n2-ss-control-bullet-vertical"
+                            style="position: absolute;">
+                            <div class="n2-style-3e702635329eba6b6b98a2cfe62c4664-simple  nextend-bullet-bar n2-ow n2-bar-justify-content-center">
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot "
+                                    tabindex="0">01</div>
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot "
+                                    tabindex="0">02</div>
+                                <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot "
+                                    tabindex="0">03</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="n2-clear"></div>
+                <div id="n2-ss-4-spinner" style="display: none;">
+                    <div>
+                        <div class="n2-ss-spinner-simple-white-container">
+                            <div class="n2-ss-spinner-simple-white"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            N2R(["nextend-frontend", "smartslider-frontend", "nextend-gsap", "nextend-webfontloader",
+                "smartslider-simple-type-frontend"
+            ], function () {
+                new N2Classes.SmartSliderSimple('#n2-ss-4', {
+                    "admin": false,
+                    "translate3d": 1,
+                    "callbacks": "",
+                    "background.video.mobile": 1,
+                    "randomize": {
+                        "randomize": 0,
+                        "randomizeFirst": 0
+                    },
+                    "align": "normal",
+                    "isDelayed": 0,
+                    "load": {
+                        "fade": 1,
+                        "scroll": 0
+                    },
+                    "playWhenVisible": 1,
+                    "playWhenVisibleAt": 0.5,
+                    "responsive": {
+                        "desktop": 1,
+                        "tablet": 1,
+                        "mobile": 1,
+                        "onResizeEnabled": true,
+                        "type": "fullpage",
+                        "downscale": 1,
+                        "upscale": 1,
+                        "minimumHeight": -1,
+                        "maximumHeight": -1,
+                        "maximumSlideWidth": 3000,
+                        "maximumSlideWidthLandscape": 3000,
+                        "maximumSlideWidthTablet": 3000,
+                        "maximumSlideWidthTabletLandscape": 3000,
+                        "maximumSlideWidthMobile": 3000,
+                        "maximumSlideWidthMobileLandscape": 3000,
+                        "maximumSlideWidthConstrainHeight": 0,
+                        "forceFull": 1,
+                        "forceFullOverflowX": "body",
+                        "forceFullHorizontalSelector": "body",
+                        "constrainRatio": 1,
+                        "verticalOffsetSelectors": "#wpadminbar",
+                        "decreaseSliderHeight": 0,
+                        "focusUser": 0,
+                        "focusAutoplay": 0,
+                        "deviceModes": {
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 0,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 0,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 0
+                        },
+                        "normalizedDeviceModes": {
+                            "unknownUnknown": ["unknown", "Unknown"],
+                            "desktopPortrait": ["desktop", "Portrait"],
+                            "desktopLandscape": ["desktop", "Portrait"],
+                            "tabletPortrait": ["tablet", "Portrait"],
+                            "tabletLandscape": ["tablet", "Portrait"],
+                            "mobilePortrait": ["mobile", "Portrait"],
+                            "mobileLandscape": ["mobile", "Portrait"]
+                        },
+                        "verticalRatioModifiers": {
+                            "unknownUnknown": 1,
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 1,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 1,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 1
+                        },
+                        "minimumFontSizes": {
+                            "desktopPortrait": 1,
+                            "desktopLandscape": 1,
+                            "tabletPortrait": 1,
+                            "tabletLandscape": 1,
+                            "mobilePortrait": 1,
+                            "mobileLandscape": 1
+                        },
+                        "ratioToDevice": {
+                            "Portrait": {
+                                "tablet": 0.7,
+                                "mobile": 0.5
+                            },
+                            "Landscape": {
+                                "tablet": 0,
+                                "mobile": 0
+                            }
+                        },
+                        "sliderWidthToDevice": {
+                            "desktopPortrait": 1200,
+                            "desktopLandscape": 1200,
+                            "tabletPortrait": 840,
+                            "tabletLandscape": 0,
+                            "mobilePortrait": 600,
+                            "mobileLandscape": 0
+                        },
+                        "basedOn": "combined",
+                        "orientationMode": "width_and_height",
+                        "scrollFix": 0,
+                        "overflowHiddenPage": 0,
+                        "desktopPortraitScreenWidth": 1200,
+                        "tabletPortraitScreenWidth": 800,
+                        "mobilePortraitScreenWidth": 440,
+                        "tabletLandscapeScreenWidth": 800,
+                        "mobileLandscapeScreenWidth": 440
+                    },
+                    "controls": {
+                        "scroll": 0,
+                        "drag": 1,
+                        "touch": "horizontal",
+                        "keyboard": 1,
+                        "tilt": 0
+                    },
+                    "lazyLoad": 0,
+                    "lazyLoadNeighbor": 0,
+                    "blockrightclick": 0,
+                    "maintainSession": 0,
+                    "autoplay": {
+                        "enabled": 1,
+                        "start": 1,
+                        "duration": 8000,
+                        "autoplayToSlide": -1,
+                        "autoplayToSlideIndex": -1,
+                        "allowReStart": 0,
+                        "pause": {
+                            "click": 1,
+                            "mouse": "0",
+                            "mediaStarted": 1
+                        },
+                        "resume": {
+                            "click": 0,
+                            "mouse": "0",
+                            "mediaEnded": 1,
+                            "slidechanged": 0
+                        }
+                    },
+                    "perspective": 1000,
+                    "layerMode": {
+                        "playOnce": 0,
+                        "playFirstLayer": 1,
+                        "mode": "skippable",
+                        "inAnimation": "mainInEnd"
+                    },
+                    "parallax": {
+                        "enabled": 1,
+                        "mobile": 0,
+                        "is3D": 0,
+                        "animate": 1,
+                        "horizontal": "mouse",
+                        "vertical": "mouse",
+                        "origin": "slider",
+                        "scrollmove": "both"
+                    },
+                    "background.parallax.tablet": 0,
+                    "background.parallax.mobile": 0,
+                    "postBackgroundAnimations": 0,
+                    "initCallbacks": [
+                        "N2D(\"SmartSliderWidgetBulletTransition\",function(t,i){function e(i,e){this.slider=i,this.slider.started(t.proxy(this.start,this,e))}return e.prototype.start=function(i){if(this.slider.sliderElement.data(\"bullet\"))return!1;this.slider.sliderElement.data(\"bullet\",this),this.axis=\"horizontal\",this.offset=0,this.parameters=i,this.bar=this.slider.sliderElement.find(\".nextend-bullet-bar\");var e=\"universalclick\";if(\"mouseenter\"==i.action&&(e=\"mouseenter\"),this.originalDots=this.dots=this.bar.find(\"div\").on(e,t.proxy(this.onDotClick,this)),this.slider.isShuffled){for(var s=[],o=[],a=0;this.slider.realSlides.length>a;a++){var r=this.slider.realSlides[a];s.push(this.dots.get(r.originalIndex)),o.push(this.parameters.thumbnails[r.originalIndex]),i.numeric&&this.dots.eq(r.originalIndex).html(a+1)}this.originalDots=this.dots=t(s).appendTo(this.dots.parent()),this.parameters.thumbnails=o}if(this.slider.sliderElement.on({slideCountChanged:t.proxy(this.onSlideCountChanged,this),sliderSwitchTo:t.proxy(this.onSlideSwitch,this)}),this.slider.firstSlideReady.done(t.proxy(this.onFirstSlideSet,this)),0==i.overlay){var n=!1;switch(i.area){case 1:n=\"Top\";break;case 12:n=\"Bottom\";break;case 5:n=\"Left\",this.axis=\"vertical\";break;case 8:n=\"Right\",this.axis=\"vertical\"}n&&(this.offset=parseFloat(this.bar.data(\"offset\")),this.slider.responsive.addStaticMargin(n,this))}this.initThumbnails()},e.prototype.onFirstSlideSet=function(t){this.dots.eq(t.index).addClass(\"n2-active\")},e.prototype.onDotClick=function(i){this.slider.directionalChangeToReal(this.originalDots.index(i.currentTarget)),t(i.target).blur()},e.prototype.onSlideSwitch=function(t,i){this.dots.filter(\".n2-active\").removeClass(\"n2-active\"),this.dots.eq(i).addClass(\"n2-active\")},e.prototype.isVisible=function(){return this.bar.is(\":visible\")},e.prototype.getSize=function(){return\"horizontal\"==this.axis?this.bar.height()+this.offset:this.bar.width()+this.offset},e.prototype.initThumbnails=function(){this.parameters.thumbnails.length>0&&this.dots.each(t.proxy(function(i,e){\"\"!=this.parameters.thumbnails[i]&&t(e).on({universalenter:t.proxy(this.showThumbnail,this,i)},{leaveOnSecond:!0})},this))},e.prototype.showThumbnail=function(i,e){var s=this.getThumbnail(i);NextendTween.to(s,.3,{opacity:1}).play(),this.originalDots.eq(i).on(\"universalleave.thumbnailleave\",t.proxy(this.hideThumbnail,this,i,s))},e.prototype.hideThumbnail=function(t,i,e){e.stopPropagation(),this.originalDots.eq(t).off(\"universalleave.thumbnailleave\"),NextendTween.to(i,.3,{opacity:0,onComplete:function(){i.remove()}}).play()},e.prototype.getThumbnail=function(i){var e=this.originalDots.eq(i),s=this.slider.sliderElement.offset(),o=e.offset(),a=e.outerWidth(),r=e.outerHeight(),n=t(\"<div\/>\").append(t(\"<div\/>\").css({width:this.parameters.thumbnailWidth,height:this.parameters.thumbnailHeight,backgroundImage:'url(\"'+this.parameters.thumbnails[i]+'\")'}).addClass(\"n2-ss-bullet-thumbnail\")).addClass(this.parameters.thumbnailStyle).addClass(\"n2-ss-bullet-thumbnail-container\").appendTo(this.slider.sliderElement);switch(this.parameters.thumbnailPosition){case\"right\":n.css({left:o.left-s.left+a,top:o.top-s.top+r\/2-n.outerHeight(!0)\/2});break;case\"left\":n.css({left:o.left-s.left-n.outerWidth(!0),top:o.top-s.top+r\/2-n.outerHeight(!0)\/2});break;case\"top\":n.css({left:o.left-s.left+a\/2-n.outerWidth(!0)\/2,top:o.top-s.top-n.outerHeight(!0)});break;case\"bottom\":n.css({left:o.left-s.left+a\/2-n.outerWidth(!0)\/2,top:o.top-s.top+r})}return e.data(\"thumbnail\",n),n},e.prototype.onSlideCountChanged=function(i,e,s){this.dots=t();for(var o=0;this.originalDots.length>o;o++)o%s==0?this.dots=this.dots.add(this.originalDots.eq(o).css(\"display\",\"\")):this.originalDots.eq(o).css(\"display\",\"none\");this.parameters.numeric&&this.dots.each(function(t,i){i.innerHTML=t+1})},e});",
+                        "new N2Classes.SmartSliderWidgetBulletTransition(this, {\"overlay\":true,\"area\":6,\"thumbnails\":[],\"action\":\"click\",\"numeric\":1});"
+                    ],
+                    "allowBGImageAttachmentFixed": false,
+                    "bgAnimationsColor": "RGBA(51,51,51,1)",
+                    "bgAnimations": 0,
+                    "mainanimation": {
+                        "type": "horizontal",
+                        "duration": 800,
+                        "delay": 0,
+                        "ease": "easeOutQuad",
+                        "parallax": 0,
+                        "shiftedBackgroundAnimation": "auto"
+                    },
+                    "carousel": 1,
+                    "dynamicHeight": 0
+                });
+            });
+        </script>
+        <div id="n2-ss-4-placeholder" style="position: relative;z-index:2;color:RGBA(0,0,0,0);max-height:3000px;">
+            <img style="width: 100%; max-width:3000px; display: block;" class="n2-ow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiA+PC9zdmc+"
+                alt="Slider" />
+        </div>
+    </section>
+    <!-- SLIDER END -->
+
+    <!-- SECTION START -->
+    <section id="section-introduction" class="about-info ptb150" style="padding-top:200px;">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="item-left col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="equal-height">
+                            <div>
+                                <div class="inline-block">
+                                    <span class="s_htitle">Picture billions of gamers, creating, sharing and getting
+                                        rewarded with immutable and decentralized blockchains. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="equal-height">
+                        <div>
+                            <div class="inline-block">
+                                <span class="text-gradient fsize-80 fweight-700 font-agency uppercase">INTRODUCTION</span>
+                            </div>
+                            <div class="inline-block">
+                                <span class="s_title block">A New Era Of Gaming</span>
+                                <span class="s_subtitle block">Starts Now!</span>
+                            </div>
+                        </div>
+
+                        <ul class=" pt10">
+                            Abstract
+                            <li class="color5">
+
+                                With 2.3Bn gamers and casual players around the globe, gaming took the entertainment
+                                industry by storm and it is now the number one pastime surpassing cinema and music.
+                                Still, from this number of players, a huge part is hoping to make a living out of this
+                                passion and often they are deceived by the audience’s reactions. OnGame has the will to
+                                change that, and to disrupt the game by adding a new way to monetize and to reward
+                                gamers as well as video game content creators.
+                                <p></p>
+                            </li>
+                            Problem statement
+                            <li class="color5">
+                                In 2018, the gaming industry generated $137,9 Bn thanks to the contribution of 2.3 Bn
+                                gamers and casual players but only a small fraction of these revenues go into the
+                                wallet of the gamers. Moreover only a small fraction of gamers are being rewarded
+                                thanks to the gaming contents they have created. Meanwhile billions of players and
+                                billions of quality contents are still unseen or unappreciated with the players strive
+                                to be rewarded for all the time spent on video games and promoting the gaming industry
+                                to make it the number one pastime of billions of people.
+                                <p></p>
+                            </li>
+                            Introduction
+                            <li class="color5">
+                                Never in the history of industry growth have we seen anything like the video game one.
+                                In the past 30 years, it came from an intimate activity within the friends and family
+                                circle to a worldwide cultural phenomenon. This phenomenon has been depicted into the
+                                gaming industry with an on-going growth rate within the professional video game
+                                players. Moreover, this phenomenon has been translated into the birth of passionate and
+                                gaming communities.
+                                Picture billions of gamers and fans, creating, sharing and being rewarded for their
+                                contents on immutable, unstoppable and decentralized blockchains.
+                                As technology expands so will the gaming industry which includes video games, video
+                                contents, products, virtual reality, special events, and video game tournaments. Yet as
+                                digital disruption continues, new technologies and new platforms are needed to sustain
+                                industry growth, development and solve certain issues.
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><img src="../assets/images/top1.png" style="position: absolute;top:300px;left:0px;z-index: -1;">
+                <span class="basic block wow bounceInLeft fsize-80 fweight-700 font-agency uppercase shadow" style="    margin-top:550px;"
+                    data-wow-duration="2s"> What if there was only one place to share all of the different types of
+                    gaming contents? </span>
+
+                <span class="simple block wow bounceInRight fsize-58 fweight-700 font-agency uppercase shadow" style="    margin-top:320px;"
+                    data-wow-duration="3s"> <img src="../assets/images/top2.png" style="z-index: -1;padding-top: 200px;">
+                    <div style="position: relative;top:-300px;left:0px;"> What if there was a place to reward gaming
+                        contents based on the time spent
+                        and the quality rather than the “name”?</div>
+                </span>
+                <span class="basic block wow fadeInLeft fsize-80 fweight-700 font-agency uppercase shadow"
+                    data-wow-duration="4s"> <img src="../assets/images/top3.png" style="z-index: -1;    left: -415px;
+                        position: absolute;">
+                    <div style="position: relative;top:100px;left:0px;"> What if there was a place to promote any video
+                        games regardless of how much
+                        the distributing company can spend on the marketing?</div>
+                </span>
+                <span class="simple block wow fadeInRight fsize-80 fweight-700 font-agency uppercase ptb150 shadow"
+                    data-wow-duration="7s"> What if there was a place that could welcomed new gamers and to attract new
+                    gamers everyday?</span>
+                <span class="basic block wow bounceInLeft fsize-80 fweight-700 font-agency uppercase ptb150 shadow"
+                    data-wow-duration="6s"> <img src="../assets/images/top4.png" style="z-index: -1;
+                        position: absolute;">
+                    <div style="position: relative;top:100px;left:0px;padding-bottom: 200px;"> What if there was a
+                        place that could support the gamers in overcoming all
+                        the obstacles laying between him to get to the reward?</div>
+                </span>
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="3s">
+                    <div class="title color-white">
+                        MISSION
+                    </div>
+                    <div class="subtitle">
+                        OUR
+                    </div>
+                </div>
+
+                OnGame takes on the mission to build an alternative way to reward gamers, build community and
+                measurement for games and gamers, and to give the participants promotion based on individualized scores
+                that reflect their contribution to the gaming world and to the OnGame ecosystem.
+                We want to make another big step in blockchain’s mass adoption by :
+                <p></p>
+                improving the accessibility to blockchains by using the nearest vector which is gaming
+                <p></p>
+                building a decentralized all-in-one gaming platform
+                <p></p>
+                becoming one of the key reference websites and a big actor in the gaming world by 2020
+                <p></p>
+                Apart from being a key tool for video game content creators, OnGame aims to be a highway for the gaming
+                industry, to be inset into underdeveloped countries and emerging countries and to expand the market
+                there.
+                <div class="lheight-26">
+                    <p>OnGame is the first of its kind blockchain app
+                        that leverages cryptocurrency in a platform agnostic
+                        approach to reward its users, incentivize engagement and support the gaming community
+                        with the native OG currency.</p>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="1s" style="margin-bottom: 20px;">
+                        Homepage
+                        <img src="../assets/images/blog/capture1.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="1.5s" style="margin-bottom: 20px;">
+                        Streaming
+                        <img src="../assets/images/blog/capture2.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="2s" style="margin-bottom: 20px;">
+                        Game
+                        <img src="../assets/images/blog/capture3.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="2.5s">
+                        Tournaments
+                        <img src="../assets/images/blog/capture4.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="3s">
+                        Chat with Wallet
+                        <img src="../assets/images/blog/capture6.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                    <div class="item origin col-lg-4 col-md-4 col-sm-4 col-xs-12 muuri-item muuri-item-shown wow bounceInRight"
+                        data-wow-duration="3.5s">
+                        Profile
+                        <img src="../assets/images/blog/capture5.png" style="border-radius: 10px;    box-shadow: 0px 0px 5px #a800f0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- SECTION START -->
+    <section id="section-gaming" class="about-features ptb120 parallax" data-paroller-factor="0.1" data-paroller-type="background"
+        data-paroller-direction="vertical" style="background-image: url('../assets/images/about/about-bg.jpg')">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+                    <i class="fa fa-money fsize-58 text-gradient" aria-hidden="true"></i>
+                    <div class="mt20">
+                        <div class="fsize-40 fweight-700 font-agency color-white lheight-47">137,9 BILLIONS</div>
+                        <div class="fsize-14 fweight-700 uppercase color-white">Global Game Market</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+                    <i class="fa fa-gamepad fsize-58 text-gradient" aria-hidden="true"></i>
+                    <div class="mt20">
+                        <div class="fsize-40 fweight-700 font-agency color-white lheight-47">91%</div>
+                        <div class="fsize-14 fweight-700 uppercase color-white">From Digital Game Revenues</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+                    <i class="fa fa-users fsize-58 text-gradient" aria-hidden="true"></i>
+                    <div class="mt20">
+                        <div class="fsize-40 fweight-700 font-agency color-white lheight-47">2.3 BILLIONS</div>
+                        <div class="fsize-14 fweight-700 uppercase color-white">Gamers around the world</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+                    <i class="fa fa-globe fsize-58 text-gradient" aria-hidden="true"></i>
+                    <div class="mt20">
+                        <div class="fsize-40 fweight-700 font-agency color-white lheight-47">+13,3%</div>
+                        <div class="fsize-14 fweight-700 uppercase color-white">Revenue increase in 2018</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+
+
+    <!-- SECTION START -->
+    <section class="about-info ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="item-left col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="equal-height">
+                        <div>
+                            <div class="inline-block">
+                                <span class="s_title">Overview</span>
+                            </div>
+                        </div>
+                        <div class="lheight-26">
+                            <p>
+                                It took more than 35 years for the global games business to grow to $35 billion in
+                                2007, the year that the iPhone was
+                                introduced. Since then, the games market has added an extra $100 billion in revenues to
+                                arrive at this year’s total
+                                of $137.9 billion worldwide.
+                            </p>
+                            The uptake of smartphones has been a key contributor to the accelerated growth of the
+                            games market, in terms of both engagement and revenues, but is only one of the many factors
+                            that have brought
+                            us to where we are today.
+                            <p></p>To put current and future trends into perspective, we look back at the fundamental
+                            changes that have reshaped
+                            the industry in recent years. As we look toward the future, we foresee games playing an
+                            increasingly impactful role
+                            in disrupting and reshaping traditional industries, from implementing individual game
+                            mechanics to an array of
+                            mergers and acquisitions crossing the boundaries of traditional industries.
+                        </div>
+                        <!-- <ul class="list-1 pt10">
+                            <li class="color5">
+                                It took more than 35 years for the global games business to grow to $35 billion in 2007, the year that the iPhone was
+                                introduced. Since then, the games market has added an extra $100 billion in revenues to arrive at this year’s total
+                                of $137.9 billion worldwide. 
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="item-right col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="equal-height">
+                        <div>
+                            <div class="inline-block">
+                                <span class="text-gradient fsize-80 fweight-700 font-agency uppercase">GAMING</span>
+                            </div>
+                            <div class="inline-block">
+                                <span class="s_title block">AN ACCELERATED</span>
+                                <span class="s_subtitle block">Growth for a decade</span>
+                            </div>
+                        </div>
+                        <div class="lheight-26">
+
+                            The way games are run has changed completely in only 10 years, from both an organizational
+                            and a business perspective, regardless of platform. Add to that the ongoing global
+                            alignment of distribution channels, franchises, and
+                            business models and it becomes clear that this is more than several individual trends
+                            happening simultaneously.
+                            Ultimately, the consumer has determined the pace of change. No other form of entertainment
+                            or media gives as
+                            much power to the consumer as games. Today, not only do games empower people to actively
+                            participate, but allow
+                            them to enjoy their passion for gaming in ways that suit any mood, interest, lifestyle,
+                            location, and budget. The
+                            viewing experience is part of games’ DNA. Almost any new game includes competitive modes
+                            that could lead to a
+                            professional esports scene, including live events, pro-gamer heroes, and teams with
+                            millions of fans.
+                            The global games industry has reinvented itself to maximize consumer engagement and revenue
+                            growth on a
+                            global scale. It is time to do away with old terminology and re-examine how we segment
+                            consumers based on the
+                            wide variety of game behavior and preferences.
+
+                        </div>
+                        <ul class="list-1 pt10">
+                            <li class="color5">
+                                In only 11 years, an astounding $100 billion of additional
+                                value was created. What were the key changes that sparked this accelerated growth?
+                            </li>
+                            <li class="color5">
+                                What created the foundation
+                                for an even brighter future for the games market and the industry that powers it?
+                            </li>
+                        </ul>
+                        <p></p>
+                        <img src="../assets/images/crossing.png" style="background-color: #240065;border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- SECTION START -->
+    <section id="section-problem" class="about-info ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="equal-height">
+                    <div>
+                        <div class="inline-block">
+                            <span class="text-gradient fsize-80 fweight-700 font-agency uppercase">PROBLEM</span>
+                        </div>
+                        <div class="inline-block">
+                            <span class="s_title block">BEHIND THE</span>
+                            <span class="s_subtitle block">gaming industry</span>
+                        </div>
+                    </div>
+                    <div class="lheight-26">
+                        In many ways, the industry is turning into a "recurring revenue model" and capitalizing on
+                            increased demand. Greenberg said: “The initial purchase of a game is just the beginning of
+                            a
+                            game's monetization". While this is true and the gaming industry generating billions of
+                            revenue, including the Top 5 Most popular gaming websites which count a number of unique
+                            visitors of 70M users per month, many (pro) gamers and active actors of the gaming world
+                            still
+                            lack to get revenue from their work and their contents.
+                            <p></p>
+                            To be able to earn a salary from video gaming, the gamer can for the best, get into a team
+                            of
+                            pro-gamers and start a career in e-sports. The e-sports gamers are the new rock stars and
+                            they
+                            are able to make children dream, just how it is with traditional sports celebrities, yet
+                            the
+                            odd of becoming an e-sport athlete is very low and for most gamers it isn’t possible to
+                            realize
+                            that dream. That’s why gamers and gaming content creators turn towards other alternatives
+                            to
+                            earn a salary from the gaming world but those alternatives involve lots of difficulties,
+                            time
+                            waste and most of the time discouragement.
+                    </div>
+                    <div class="equal-height" style="margin-top:50px;">
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        Live Streams <br>
+                        <i class="fa fa-play fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            Writing guides
+                            <i class="fa fa-pencil fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            Podcasts or videos
+                            <i class="fa fa-video-camera fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            Competitive gaming
+                            <i class="fa fa-trophy fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            Games journalism
+                            <i class="fa fa-newspaper-o fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-right col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            Games testing
+                            <i class="fa fa-flask fsize-58 text-gradient" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding-left: 0px;padding-right: 0px;">
+                <div class="row">
+                        <div class="equal-height">
+                All of these options are attractive to gamers but most of the time, even after choosing one
+                path, the player won’t get much. Even if the players contents are very good, nothing can assure
+                a good revenue to live from the passion. Nothing can guarantee that the player will build a
+                large and wide audience to get paid for everything he has done for the video game industry.
+        </div>
+    </div>
+</div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- SECTION SOLUTION START -->
+    <section id="section-solution" class="about-info ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="item-right col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="equal-height">
+                        <div>
+                            <div class="inline-block">
+                                <span class="text-gradient fsize-80 fweight-700 font-agency uppercase">SOLUTION</span>
+                            </div>
+                            <div class="inline-block">
+                                <span class="s_title block">KEY TO FACILITATE</span>
+                                <span class="s_subtitle block">Ease of Adoption</span>
+                            </div>
+                        </div>
+                        <div class="lheight-26">
+                            <p>
+                                    OnGame is the first of its kind blockchain app that leverages cryptocurrency in a platform agnostic approach to reward its users, incentivize engagement and support the gaming community with the native OG currency.
+                                    By giving an alternative and complementary way to monetizing gaming content, Ongame incentivizes gamers to share their passion. Such an incentive system not only encourages gamers to share their gaming sessions, it also enables players to sort through the crowd to pick quality contents, therefore accurately forecasting their desire and allows the average user to easily and accurately pick the best gamers to follow, the best test to read about a game, the best tutorial to read, the best build to choose and many more... 
+                                    <p></p>
+                                    OnGame has the will to become the most powerful tool for Gamers as an all-in-one app. Not only it has the possibility to reward every move of the gamers as small as it could be but it aims to become an unavoidable tool for every gamers and even casual players as well as all of the actors in the gaming industry. 
+                                    <p></p>
+                                   <strong> Most valuable vector to attract people to blockchain</strong>
+                                    <br>
+                                    While blockchain still hasn’t reached its biggest potential by being adopted by the public mainstream, the nearest vector to blockchain and technology would obviously be the gaming that is already a part of the daily life of  2.3Bn people all around the world. 
+                                    <p></p>
+                                    <strong>First incentive for claiming in-game success.</strong>
+                                    <br>
+                                    What if being a commander in Call of Duty or finishing GTA V at 100% could lead to a real life reward? OnGame aims to offer to the gamers and to gaming companies the possibility to reward gamers by tokenizing in-game trophies and titles.
+                                    <p></p>
+                                    <strong>Reputation system</strong>
+                                    <br>
+                                    To this end, our team introduces two sets of ranking integrated into the platform, PGM score and Knowledge score, in order to create a decentralized measurement for players, and to give the participants promotion based on individualized scores that reflect their contribution to the Ongame ecosystem.
+                                    <p></p>
+                                    <strong>Community oriented</strong>
+                                    <br>
+                                    OnGame will also allow collaborations between its users by opening the possibility to create teams and guilds. That will lead to better exposure for the members of the same guild and to work together to overcome challenges as a team. 
+                                    <p></p>
+                                    <strong>The crossroad of gaming</strong>
+                                    <br>
+                                    Not only OnGame will be a powerful tool for gamers but it aims to be the place to be when we are talking about gaming. All the different actors of the gaming industry will find its path around OnGame as well as to interact with other parts of this moving industry. OnGame’s mission is to be the crossroad but also to be the heart of the gaming industry.  
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- SECTION BLOCKCHAIN START -->
+    <section id="section-blockchain" class="price ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="equal-height">
+                        <div>
+                            <div class="inline-block">
+                                <span class="text-gradient fsize-80 fweight-700 font-agency uppercase">BLOCKCHAIN</span>
+                            </div>
+                            <div class="inline-block">
+                                <span class="s_title block">A SOCIAL AND UTILITARIAN TECHNOLOGY</span>
+                                <span class="s_subtitle block">FOR GAMING</span>
+                            </div>
+                        </div>
+                        <div class="lheight-26">
+                            <p>OnGame taps into the power of two blockchains to incentivize
+                                engagement and offers an alternative, complementary way to monetize gaming
+                                content.
+                                Ongame uses the social protocol of STEEM as the core layer, combined with the
+                                power of TRON as the blockchain solution, to develop and implement different types
+                                of smart contracts.
+                                <p>
+                                </p>
+                                The scalability of STEEM and TRON has been proven over the last
+                                few years. They are both adapted to OnGame development needs to make the
+                                platform accessible, secure and powerful, while allowing gamers to be rewarded
+                                with OnGame tokens (OG).
+
+                            </p>
+                            <ul class="list-1 pt10">
+                                <li class="color5">
+                                    OnGame has no predefined algorithms.
+                                </li>
+                                <li class="color5">
+                                    A single account permit to communicate with both blockchains.
+                                </li>
+                                <li class="color5">
+                                    It is a free to use social gaming platform allowing creators of varying skills to
+                                    have their own community.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ptb150">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        How are OG Tokens earned?
+                    </div>
+                    <div class="subtitle">
+                        Rewarding
+                    </div>
+                </div>
+                <div class="mt90">
+                    <div class="col-md-5ths col-xs-6 wow fadeInLeft" data-wow-duration="2s">
+                        <div class="item silver text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white" style="    padding: 30px;">
+                                By upvoting or tipping
+                            </div>
+                            <div class="current-bl color-white pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <img src="../assets/images/like.png">
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Based on Like
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Each time an user upvote/tip a content with his Steem account or
+                                    Tron wallet he will get some curation rewards.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5ths col-xs-6 wow fadeInTop" data-wow-duration="2s">
+                        <div class="item diamond text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white" style="    padding: 30px;">
+                                With ingame achievements
+                            </div>
+                            <div class="current-bl color-white pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <img src="../assets/images/skill.png">
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Based on Skill
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Gamers can unlock in-game achievements and finish their favorite
+                                    games to earn OG tokens.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5ths col-xs-6 wow fadeInDown" data-wow-duration="2s">
+                        <div class="item platinum text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white" style="    padding: 30px;">
+                                By playing or live streaming
+                            </div>
+                            <div class="current-bl color-white pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <img src="../assets/images/time.png">
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Based on Time
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Spending time on OnGame to promote games and to entertain other
+                                    users is definitely worth.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5ths col-xs-6 wow fadeInTop" data-wow-duration="2s">
+                        <div class="item gold text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white" style="    padding: 30px;">
+                                By sharing about game
+                            </div>
+                            <div class="current-bl color-white pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <img src="../assets/images/knowledge.png">
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Based on Knowledge
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">You have a wide Knowledge of a game and want to share your
+                                    experience? Get rewarded for it!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5ths col-xs-6 wow fadeInRight" data-wow-duration="2s">
+                        <div class="item standart text-center">
+                            <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white" style="    padding: 30px;">
+                                By mining with player devices
+                            </div>
+                            <div class="current-bl color-white pb20">
+                                <div class="font-agency fweight-700 lheight-30">
+                                    <img src="../assets/images/work.png">
+                                </div>
+                                <div class="fsize-14 uppercase fweight-700">
+                                    Based on Work
+                                </div>
+                            </div>
+                            <div class="price-content equal-height">
+                                <div class="item-list">Mine with Ongame and get some return on investment with your
+                                    graphic card with OG tokens.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- ROADMAP START -->
+
+    <section class="ptb150" id="section-roadmap">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        ROADMAP
+                    </div>
+                    <div class="subtitle">
+                        WHERE WE GO
+                    </div>
+                </div>
+                <div class="mt90">
+                    <div id="visualization"></div>
+                    <script src="../assets/js/vis.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+
+                    <script>
+                        var now = moment().minutes(0).seconds(0).milliseconds(0);
+                        var groupCount = 3;
+                        var itemCount = 20;
+                        var names = ['Ongame App', 'Steem', 'Tron'];
+                        var groups = new vis.DataSet();
+                        for (var g = 0; g < groupCount; g++) {
+                            groups.add({ id: g, content: names[g] });
+                        }
+                        var items = new vis.DataSet([
+                            { id: 1, group: 0, content: '<img src="../assets/images/logosmall.png"> MVP development', start: '2018-08-05', end: '2019-06-01' },
+                            { id: 2, group: 1, content: '<img src="../assets/images/steemsmall.png"> Steem Integration', start: '2018-08-05', end: '2018-12-01' },
+                            { id: 3, group: 2, content: '<img src="../assets/images/tronsmall.png"> Tron Integration', start: '2018-11-28', end: '2019-06-01' },
+                        ]);
+                        var container = document.getElementById('visualization');
+                        var options = {
+                            groupOrder: 'content',  // groupOrder can be a property name or a sorting function
+                            clickToUse: true,
+                            height: '300px',
+                            showMajorLabels: true,
+                            showMinorLabels: false,
+                            selectable: false,
+                            orientation: { item: 'top', axis: 'top' },
+                            min: new Date(2018, 6, 1),                // lower limit of visible range
+                            max: new Date(2020, 6, 16)
+                        };
+
+                        var timeline = new vis.Timeline(container);
+                        timeline.setOptions(options);
+                        timeline.setGroups(groups);
+                        timeline.setItems(items);
+                    </script>
+                </div>
+                Follow us on Facebook, Twitter, Discord and get informed about our latests improvements.
+            </div>
+        </div>
+    </section>
+    <!-- ROADMAP SECTION END -->
+    <!-- TEAM START -->
+    <section class="team-bl ptb150" id="section-team">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        FUTURESHOCK
+                    </div>
+                    <div class="subtitle">
+                        WE ARE
+                    </div>
+                </div>
+                <div class="container-wrapper mt90">
+                    <div class="item-content first col-lg-3 col-md-3 col-sm-6 col-xs-12 mb30 equal-height wow fadeInUp"
+                        data-wow-duration="1s">
+                        <div class="border-img">
+                            <img src="../assets/images/team/team-1.jpg" alt="" class="img-responsive">
+                        </div>
+                        <div class="text-container background-4 text-center">
+                            <a href="single-team.html" class="name font-agency fsize-32 fweight-700 lheight-32 color-white">
+                                Aytaç Ozden CETINKAYA
+                            </a>
+                            <div class="position mt10">
+                                FOUNDER
+                            </div>
+                            <div class="social mt20">
+                                <a href="https://linkedin.com/in/aytaç-ozden-cetinkaya-3686a311a/" target="_blank">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://twitter.com/Hightouch7" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://steemit.com/@hightouch" target="_blank">
+                                    <img width="16" src="../assets/images/steem.svg" style="opacity: 0.5">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-right col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class="equal-height">
+                            <ul class="list-1 pt10">
+                                My name is Aytaç Ozden Cetinkaya (aka hightouch), I am the founder of FutureShock and a
+                                FullStack Polyglot Developper. I live between Paris and Strasbourg in France.
+                                <p></p>
+                                I have a wide knowledge of IT's (including blockchain’s) operating system, the thinking
+                                process, and the necessity of an ecosystem. I spent more than a decade as an engineer,
+                                specializing in the research of numerical solutions using mostly Microsoft and Web
+                                technologies.
+                                <p></p>
+                                Following my successful work on many projects, I made a conscious decision to turn my
+                                work next towards building something to facilitate the use and the adoption of blockchain technology. I took on the challenge on gathering a motivated team, to improve
+                                the future and the world together by building the most useful apps over blockchain.
+                                <p></p>
+                                Today, I have no doubt about having gone the right direction.
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container ptb150">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        Testimonials:
+                    </div>
+                    <div class="subtitle">
+                        All Reviews
+                    </div>
+                </div>
+                <div class="testimonial-slider testimonial-tpl mt100">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="slide-item">
+                            <div class="author-img">
+                                <img src="https://steemitimages.com/u/masterthematrix/avatar" alt="">
+                            </div>
+                            <div class="text-center">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <div class="fsize-24 fweight-700 color-white font-agency uppercase">
+                                    @masterthematrix
+                                </div>
+                                <div class="color-1 fsize-14 fweight-700 uppercase">
+                                    Cryptocurrency, Investing, Trading, Travelling
+                                </div>
+                                <div class="fsize-20 italic mt40">
+                                    «The user interface is appealing, easy to navigate and provides great overview of
+                                    all the features of the platform. I had no problem to find interesting things. »
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="slide-item">
+                            <div class="author-img">
+                                <img src="https://steemitimages.com/u/cardboard/avatar" alt="">
+                            </div>
+                            <div class="text-center">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <div class="fsize-24 fweight-700 color-white font-agency uppercase">
+                                    @cardboard
+                                </div>
+                                <div class="color-1 fsize-14 fweight-700 uppercase">
+                                    Crypto | Science | Cool stuff
+                                </div>
+                                <div class="fsize-20 italic mt40">
+                                    «Is this also a streaming platform? And games shop? And user generated
+                                    reviews/tips/tricks platform? All in one place + crypto monetization for content
+                                    creators? I mean, it this the real life or fanta see?»
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="slide-item">
+                            <div class="author-img">
+                                <img src="https://steemitimages.com/u/enjar/avatar" alt="">
+                            </div>
+                            <div class="text-center">
+                                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                <div class="fsize-24 fweight-700 color-white font-agency uppercase">
+                                    @enjar
+                                </div>
+                                <div class="color-1 fsize-14 fweight-700 uppercase">
+                                    Unconfirmed time traveling cat
+                                </div>
+                                <div class="fsize-20 italic mt40">
+                                    «That looks rather amazing! It would be nice to know if a game review had any
+                                    impact on someone buying it let alone getting a small cut of the sale. Looking
+                                    forward to seeing this grow.»
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TEAM END -->
+    <!-- FAQ SECTION START -->
+    <section class="ptb150" id="section-faq">
+        <div class="container">
+            <div class="row">
+                <div class="title-bl text-center wow fadeIn" data-wow-duration="2s">
+                    <div class="title color-white">
+                        Frequently Asked Questions
+                    </div>
+                    <div class="subtitle">
+                        You should know this
+                    </div>
+                </div>
+                <div class="mt30 text-center">
+                    OnGame.io is a full featured all-in-one gaming platform based on blockchains.
+                    <br /> Creators and players can share their reviews, streamings, videos, etc... and get rewarded!
+                </div>
+            </div>
+            <div class="row">
+                <div class="faq-container mt90">
+                    <div class="left-column-1 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        01
+                                    </div>
+                                </div>
+                                <div class="counter-content table-cell valign-top">
+                                    <div class="counter-title">Totally free access?</div>
+                                    <div class="counter-text mt25">
+                                        Yes! All features on OnGame.io are completely free to use for everyone. We take
+                                        fees on your rewards.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column-2 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-content table-cell valign-top text-right">
+                                    <div class="counter-title">How do we reward people?</div>
+                                    <div class="counter-text mt25">
+                                        - Using the Steem blockchain mechanism</br>
+                                        - Re-distribute our gains (ads,sell, fees...)</br>
+                                    </div>
+                                </div>
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        02
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-column-3 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        03
+                                    </div>
+                                </div>
+                                <div class="counter-content table-cell valign-top">
+                                    <div class="counter-title">I will be paid to play and share my games?</div>
+                                    <div class="counter-text mt25">
+                                        Absolutely! OnGame.io is the first platform where your contents and your
+                                        reviews are worth crypto!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-column-4 column col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="table">
+                            <div class="table-row">
+                                <div class="counter-content table-cell valign-top text-right">
+                                    <div class="counter-title">Can I contribute to OnGame.io?</div>
+                                    <div class="counter-text mt25">
+                                        Investors, developers, partners, etc.... You want to help us to lead the gaming
+                                        world? Here you go : <a>contact@ongame.io</a>
+                                    </div>
+                                </div>
+                                <div class="counter-round table-cell valign-top">
+                                    <div class="counter-bl">
+                                        04
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ SECTION END -->
+    <!-- REGISTER SECTION START -->
+    <section class="register-section background-gradient ptb150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+                    <div class="reg-wrapper">
+                        <div class="title-bl text-left">
+                            <div class="title color-white">
+                                Register for our Newsletter now
+                            </div>
+                            <div class="subtitle">
+                                Newslatter
+                            </div>
+                        </div>
+                        <div class="color-white">
+                            We are always ready to welcome you!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="2s">
+                    <form action="#" class="reg-form">
+                        <div class="reg_input">
+                            <input type="text" placeholder="Enter your Email address here">
+                        </div>
+                        <button class="reg_submit">
+                            <i class="fa fa-envelope color-1 fsize-14" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- REGISTER SECTION END -->
+    <!-- SECTION START -->
+    <section class="contact-page ptb150" id="section-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h3 class="">
+                        Contact information
+                    </h3>
+                    <div class="fsize-18 lheight-30 mt40">
+                        Since 2010 we are building applications to improve your future.
+                    </div>
+                    <div class="mt60">
+                        <div class="contact-item table">
+                            <div class="table-row">
+                                <div class="icon-bl table-cell valign-top">
+                                    <i class="fa fa-phone fsize-28 fweight-400 color-1" aria-hidden="true"></i>
+                                </div>
+                                <div class="table-cell valign-top">
+                                    <div>
+                                        Phone
+                                    </div>
+                                    <div class="fsize-20 fweight-700 font-agency uppercase color-white">
+                                        +33620235840
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item table">
+                            <div class="table-row">
+                                <div class="icon-bl table-cell valign-top">
+                                    <i class="fa fa-map-marker fsize-28 fweight-400 color-5" aria-hidden="true"></i>
+                                </div>
+                                <div class="table-cell valign-top">
+                                    <div>
+                                        Location
+                                    </div>
+                                    <div class="fsize-20 fweight-700 font-agency uppercase color-white">
+                                        63 route de Brumath - 67460 Souffelweyersheim - FRANCE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-item table">
+                            <div class="table-row">
+                                <div class="icon-bl table-cell valign-top">
+                                    <i class="fa fa-envelope fsize-28 fweight-400 color-6" aria-hidden="true"></i>
+                                </div>
+                                <div class="table-cell valign-top">
+                                    <div>
+                                        E-mail
+                                    </div>
+                                    <div class="fsize-20 fweight-700 font-agency uppercase color-white">
+                                        contact@ongame.io
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-content gradient mt60">
+                        <div class="social-list">
+                            <a href="https://www.facebook.com/OnGameio/" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="social-list">
+                            <a href="https://twitter.com/OnGameOfficial" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="social-list">
+                            <a href="https://steemit.com/@ongame" target="_blank">
+                                <img width="16" src="../assets/images/steem.svg" style="margin-top:16px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <form action="#" class="contact-us-form mt100">
+                        <div class="row">
+                            <div class="input-wrap col-md-6 col-sm-6">
+                                <input type="text" class="general_input italic" placeholder="Full name">
+                            </div>
+                            <div class="input-wrap col-md-6 col-sm-6">
+                                <input type="email" class="general_input italic" placeholder="Email address">
+                            </div>
+                            <div class="input-wrap col-md-6 col-sm-6">
+                                <input type="email" class="general_input italic" placeholder="Phone Number">
+                            </div>
+                            <div class="input-wrap col-md-6 col-sm-6">
+                                <input type="email" class="general_input italic" placeholder="Subject">
+                            </div>
+                            <div class="input-wrap col-md-12">
+                                <textarea class="general_input italic" placeholder="Your Message..."></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn gradient mt30 color-white color-white plr50 ptb19" value="Send message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION END -->
+
+    <!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb110">
+                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                    <a href="index.html">
+                        <img src="../assets/images/logomedium.png" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12 text-right">
+                    <ul class="footer-menu">
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-introduction">
+                                INTRODUCTION
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-gaming">
+                                GAMING
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-problem">
+                                PROBLEM
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-solution">
+                                SOLUTION
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-blockchain">
+                                BLOCKCHAIN
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-roadmap">
+                                ROADMAP
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-team">
+                                TEAM
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-faq">
+                                FAQ
+                            </a>
+                        </li>
+                        <li class="inline-block">
+                            <a class="ongame-menu" href="#section-contact">
+                                CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt60">
+                      
+
+                    </div>
+                    <div class="social-content mt30">
+                        <div class="social-list">
+                            <a href="https://www.facebook.com/OnGameio/" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="social-list">
+                            <a href="https://twitter.com/OnGameOfficial" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="social-list">
+                            <a href="https://steemit.com/@ongame" target="_blank">
+                                <img width="16" src="../assets/images/steem.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="copyright ptb30 col-lg-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        OnGame.io © 2018
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
+                        A FutureShock Product
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+    <a href="#" id="toTop" class="color-white">
+        <i class="fa fa-angle-up fsize-14" aria-hidden="true"></i>
+    </a>
+    <!-- Scripts -->
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/plugins/slick-1.8.0/slick/slick.min.js"></script>
+    <script src="../assets/plugins/flex-menu/flexmenu.min.js"></script>
+    <script src="../assets/plugins/jquery-match-height-master/dist/jquery.matchHeight.js"></script>
+    <script src="../assets/plugins/muuri-master/muuri.js"></script>
+    <script src="../assets/plugins/vide-0.5.1/dist/jquery.vide.min.js"></script>
+    <script src="../assets/plugins/paroller.js-master/dist/jquery.paroller.min.js"></script>
+    <script src="../assets/js/video.js"></script>
+    <script src="../assets/js/jquery.inview.min.js"></script>
+    <script src="../assets/js/progressbar.min.js"></script>
+    <script src="../assets/plugins/lightbox2-master/dist/js/lightbox.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/plugins/jquery-date-range-picker-master/dist/jquery.daterangepicker.min.js"></script>
+    <script src="../assets/plugins/wow-master/dist/wow.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ongame-menu').on('click', 'a', function (e) {
+                var href = $(this).attr("href"),
+                    offsetTop = href === "#" ? 0 : $(href).offset().top - 0;
+                $('html, body').stop().animate({
+                    scrollTop: offsetTop,
+                }, 500, "easeInOutCirc");
+                e.preventDefault();
+            });
+        })
+    </script>
+</body>
+
+</html>
